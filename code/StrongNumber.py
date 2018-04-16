@@ -14,8 +14,13 @@ def strong_num(number):
     sum=0
     for s in str(number):    
         sum = sum + math.factorial(int(s))
-    if sum == number return "STRONG!!!!" else  return "Not Strong !!"
+    # python 3元运算符
+    return "STRONG!!!!" if sum == number else  "Not Strong !!"
 
 #优雅的写法        
 def strong_num1(number):
     return "STRONG!!!!" if sum(math.factorial(int(i)) for i in str(number)) == number else "Not Strong !!"
+
+print(strong_num(1))
+print(strong_num(145))
+print(strong_num(123))
