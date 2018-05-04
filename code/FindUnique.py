@@ -20,3 +20,24 @@ def find_uniq_number1(arr):
 
 i = find_uniq_number([ 1, 1, 1, 2, 1, 1 ])
 print(i)
+
+'''
+find_uniq([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ]) # => 'BbBb'
+find_uniq([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ]) # => 'foo'
+'''
+def find_uniq_string(arr):
+    # do the magic
+    for x in arr :
+        pass
+
+    arr = map(lambda x : str(x).lower() ,arr)
+    arr = map(lambda x : "".join(sorted(x)),arr)
+
+    arr = sorted(arr)
+    return arr[-1] if arr[0] == arr[1] else arr[0]
+
+s = find_uniq_string([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ])
+s1 = find_uniq_string([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ])
+s2 = find_uniq_string([  '    ', 'a', '  '])
+
+print(s2)
