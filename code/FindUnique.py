@@ -27,17 +27,16 @@ find_uniq([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ]) # => 'foo'
 '''
 def find_uniq_string(arr):
     # do the magic
+    newmap = {}
     for x in arr :
-        pass
-
-    arr = map(lambda x : str(x).lower() ,arr)
-    arr = map(lambda x : "".join(sorted(x)),arr)
-
+         newmap["".join(set(sorted(str(x).lower().strip())))] = x
+    arr = map(lambda x : "".join(set(sorted(str(x).lower().strip()))),arr)
     arr = sorted(arr)
-    return arr[-1] if arr[0] == arr[1] else arr[0]
+    return newmap[arr[-1] if arr[0] == arr[1] else arr[0]]
 
-s = find_uniq_string([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ])
-s1 = find_uniq_string([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ])
-s2 = find_uniq_string([  '    ', 'a', '  '])
+#s = find_uniq_string([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ])
+#s1 = find_uniq_string([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ])
+#s3 = find_uniq_string([  '    ', '  ', ' ', 'a', ' ', '' ])
+s2 = find_uniq_string(['', '', '', 'a', '', '' ])
 
 print(s2)
