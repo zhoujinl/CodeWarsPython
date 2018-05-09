@@ -21,8 +21,14 @@ def title_case(title, minor_words=""):
 
 print(title_case('a clash of KINGS', 'a an the of'))
 print(title_case('First a of in','an often into'))
+print(title_case(''))
 
 def title_case2(title, minor_words=''):
     title = title.capitalize().split()
     minor_words = minor_words.lower().split()
     return ' '.join([word if word in minor_words else word.capitalize() for word in title])
+
+def title_case3(title, minor_words=''):
+  return ' '.join(w if w in minor_words.lower().split() and i else w.capitalize() for i, w in enumerate(title.lower().split()))
+
+print(title_case2(''))
