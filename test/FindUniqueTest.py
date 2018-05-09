@@ -1,8 +1,6 @@
 import random
 import sys
 
-from numpy.random import test
-
 sys.path.append('../code')
 import FindUnique
 
