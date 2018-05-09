@@ -31,4 +31,9 @@ def title_case2(title, minor_words=''):
 def title_case3(title, minor_words=''):
   return ' '.join(w if w in minor_words.lower().split() and i else w.capitalize() for i, w in enumerate(title.lower().split()))
 
+
+def title_case4(title, minor_words=''):
+    return ' '.join(c if c in minor_words.lower().split() else c.title() for c in title.capitalize().split())
+
+
 print(title_case2(''))
