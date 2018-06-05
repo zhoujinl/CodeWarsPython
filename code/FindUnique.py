@@ -40,3 +40,4 @@ def find_uniq_string(arr):
 s2 = find_uniq_string(['', '', '', 'a', '', '' ])
 
 print(s2)
+print(s2)
